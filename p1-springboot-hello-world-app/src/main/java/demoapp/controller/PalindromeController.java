@@ -18,7 +18,8 @@ public class PalindromeController {
     private PalindromeService service;
 
     @GetMapping("/palindrome")
-    public String showForm(PalindromeData palindromeData) {
+    public String showForm(Model model) {
+        model.addAttribute("palindromeData", new PalindromeData());
         return "palindromeForm";
     }
 
