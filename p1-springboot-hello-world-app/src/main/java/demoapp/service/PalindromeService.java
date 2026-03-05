@@ -6,7 +6,13 @@ import org.springframework.stereotype.Service;
 public class PalindromeService {
     public Boolean isPalindrome (String word) {
         // Palindrome: word that reads the same backwards and fowards
+        if (word == null) {
+            return false;
+        }
+
+        String cleaned = word.replaceAll("\\s+", "").toLowerCase();
         String reversed = new StringBuilder(word).reverse().toString();
-        return word.equalsIgnoreCase(reversed);
+
+        return cleaned.equalsIgnoreCase(reversed);
     }
 }
