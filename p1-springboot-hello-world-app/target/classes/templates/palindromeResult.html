@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+  <h2 th:text="${result} ? 'It is a palindrome!' : 'Not a palindrome!'"></h2>
+
+  <a th:href="@{/palindrome}">Try again</a>
+</body>
+</html>
