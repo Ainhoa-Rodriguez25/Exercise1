@@ -1,6 +1,5 @@
-package demoapp;
+package demoapp.service;
 
-import demoapp.service.PalindromeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
