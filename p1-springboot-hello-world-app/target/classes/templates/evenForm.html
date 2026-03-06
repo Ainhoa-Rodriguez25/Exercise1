@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Even Number Checker</h2>
+
+<form th:action="@{/even}" th:object="${evenNumberData}" method="post">
+    <input type="number" th:field="*{number}" placeholder="Enter a number" />
+    <span th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></span>
+    <button type="submit">Check</button>
+</form>
+</body>
+</html>
