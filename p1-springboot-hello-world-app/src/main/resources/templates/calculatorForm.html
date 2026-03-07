@@ -11,7 +11,7 @@
     <div>
         <input type="number" th:field="*{num2}" placeholder="Enter number 2" />
         <span th:if="${#fields.hasErrors('num2')}" th:errors="*{num2}"></span>
-    </div>
+    </div><br>
     <div>
         <select th:field="*{operation}" required>
             <option value="">Select operation</option>
@@ -21,7 +21,7 @@
             <option value="/">/</option>
         </select>
         <span th:if="${#fields.hasErrors('operation')}" th:errors="*{operation}"></span>
-    </div>
+    </div><br>
     <div>
         <p th:text="${error}" style="color: red;"></p>
     </div>

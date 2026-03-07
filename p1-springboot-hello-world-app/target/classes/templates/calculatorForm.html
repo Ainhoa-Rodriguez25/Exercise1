@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Calculator</h2>
+
+<form th:action="@{/calculator}" th:object="${calculatorData}" method="post">
+    <div>
+        <input type="number" th:field="*{num1}" placeholder="Enter number 1" />
+        <span th:if="${#fields.hasErrors('num1')}" th:errors="*{num1}"></span>
+    </div>
+    <div>
+        <input type="number" th:field="*{num2}" placeholder="Enter number 2" />
+        <span th:if="${#fields.hasErrors('num2')}" th:errors="*{num2}"></span>
+    </div>
+    <div>
+        <select th:field="*{operation}" required>
+            <option value="">Select operation</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <span th:if="${#fields.hasErrors('operation')}" th:errors="*{operation}"></span>
+    </div>
+    <div>
+        <p th:text="${error}" style="color: red;"></p>
+    </div>
+    <button type="submit">Check</button>
+</form>
+</body>
+</html>
