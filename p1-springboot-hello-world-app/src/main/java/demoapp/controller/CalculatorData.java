@@ -18,7 +18,7 @@ public class CalculatorData {
     @Pattern(regexp = "[+\\-*/]", message = "Operation must be +, -, * or /") // Con esto se comprueba que la operación introducida está dentro de las opciones establecidas
     private String operation;
 
-    
+
     //Getters
     public Integer getNum1() { return num1; }
 
