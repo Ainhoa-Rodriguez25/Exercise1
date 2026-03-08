@@ -21,11 +21,18 @@ public class MockMvcTest {
 
     // Hacemos una petición GET a un end point y comprobamos que
     // el HTML resultante es correcto
-    @Test
+    /*@Test
     public void shouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello, this is my first spring-boot aplication")));
+    }*/
+
+    @Test
+    public void shouldReturnHomeMenu() throws Exception {
+        this.mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("MATH APPLICATION MENU")));
     }
 
     // Podemos hacer también una petición POST y pasar los datos
