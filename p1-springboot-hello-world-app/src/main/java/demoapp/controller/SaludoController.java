@@ -23,6 +23,6 @@ public class SaludoController {
 
     @GetMapping("/")
     public String home() {
-        return "home";
+        return "saludo";
     }
 }
