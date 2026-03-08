@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<body>
-<h2>Square Checker</h2>
+  <body>
+    <div th:replace="fragments :: menu"></div>
 
-<form th:action="@{/square}" th:object="${squareData}" method="post">
-  <div>
-    <input type="number" th:field="*{num1}" placeholder="Enter number 1" required/>
-    <span th:if="${#fields.hasErrors('num1')}" th:errors="*{num1}"></span>
-  </div><div></div>
-  <div>
-    <input type="number" th:field="*{num2}" placeholder="Enter number 2" required/>
-    <span th:if="${#fields.hasErrors('num2')}" th:errors="*{num2}"></span>
-  </div><div></div>
-  <button type="submit">Check</button>
-</form>
-</body>
+    <h2>Square Checker</h2>
+
+    <form th:action="@{/square}" th:object="${squareData}" method="post">
+      <div>
+        <input type="number" th:field="*{num1}" placeholder="Enter number 1" required/>
+        <span th:if="${#fields.hasErrors('num1')}" th:errors="*{num1}"></span>
+      </div><div></div>
+      <div>
+        <input type="number" th:field="*{num2}" placeholder="Enter number 2" required/>
+        <span th:if="${#fields.hasErrors('num2')}" th:errors="*{num2}"></span>
+      </div><div></div>
+      <button type="submit">Check</button>
+    </form>
+  </body>
 </html>
