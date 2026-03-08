@@ -8,9 +8,9 @@ public class CalculatorData {
     @Max(1000000)
     private Integer num1;
 
-    @NotNull // (Se debe indicar para cada
+    @NotNull // (Se debe indicar para cada variable)
     @Min(-1000000)
-    @Max(1000000)// variable)
+    @Max(1000000)
     private Integer num2;
 
     //Introducción de variable operacion para almacenar el tipo
