@@ -26,7 +26,7 @@ public class CalculatorControllerTest {
     void loadCalculatorForm() throws Exception {
         mockMvc.perform(get("/calculator"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("calculatorForm"));
+                .andExpect(view().name("calculator/calculatorForm"));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class CalculatorControllerTest {
                         .param("num2", "3")
                         .param("operation", "*"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("calculatorResult"))
+                .andExpect(view().name("calculator/calculatorResult"))
                 .andExpect(model().attributeExists("result"));
     }
 
@@ -52,7 +52,7 @@ public class CalculatorControllerTest {
                         .param("num2", "0")
                         .param("operation", "/"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("calculatorForm"))
+                .andExpect(view().name("calculator/calculatorForm"))
                 .andExpect(model().attributeExists("error"));
     }
 }
