@@ -20,18 +20,18 @@ public class EvenNumberController {
     public String showForm(Model model) {
         model.addAttribute("evenNumberData", new EvenNumberData());
 
-        return "evenForm";
+        return "evennumber/evenForm";
     }
 
     @PostMapping("/even")
     public String checkEven(@Valid EvenNumberData evenNumberData, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "evenForm";
+            return "evennumber/evenForm";
         }
 
         boolean isEven = service.isEven(evenNumberData.getNumber());
         model.addAttribute("result", isEven);
 
-        return "evenResult";
+        return "evennumber/evenResult";
     }
 }
