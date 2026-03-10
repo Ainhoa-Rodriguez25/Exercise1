@@ -26,7 +26,7 @@ public class PalindromeControllerTest {
     void loadPalindromeForm() throws Exception {
         mockMvc.perform(get("/palindrome"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("palindromeForm"));
+                .andExpect(view().name("palinforme/palindromeForm"));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class PalindromeControllerTest {
         mockMvc.perform(post("/palindrome")
                 .param("word", "radar"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("palindromeResult"))
+                .andExpect(view().name("palinforme/palindromeResult"))
                 .andExpect(model().attributeExists("result"));
     }
 }
