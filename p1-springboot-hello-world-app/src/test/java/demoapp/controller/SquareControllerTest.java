@@ -25,7 +25,7 @@ public class SquareControllerTest {
     void loadSquareForm() throws Exception {
         mockMvc.perform(get("/square"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("squareForm"));
+                .andExpect(view().name("square/squareForm"));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class SquareControllerTest {
                         .param("num1", "3")
                         .param("num2", "9"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("squareResult"))
+                .andExpect(view().name("square/squareResult"))
                 .andExpect(model().attributeExists("result"));
     }
 
@@ -48,7 +48,7 @@ public class SquareControllerTest {
                         .param("num1", "3")
                         .param("num2", "8"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("squareResult"))
+                .andExpect(view().name("square/squareResult"))
                 .andExpect(model().attributeExists("result"));
     }
 }
