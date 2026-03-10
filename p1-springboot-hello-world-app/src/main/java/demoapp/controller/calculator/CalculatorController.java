@@ -19,13 +19,13 @@ public class CalculatorController {
     public String showForm(Model model) {
         model.addAttribute("calculatorData", new CalculatorData());
 
-        return "calculatorForm";
+        return "calculator/calculatorForm";
     }
 
     @PostMapping("/calculator")
     public String calculate(@Valid CalculatorData calculatorData, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "calculatorForm";
+            return "calculator/calculatorForm";
         }
 
         try {
@@ -37,10 +37,10 @@ public class CalculatorController {
 
             model.addAttribute("result", calculationResult);
 
-            return "calculatorResult";
+            return "calculator/calculatorResult";
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
-            return "calculatorForm";
+            return "calculator/calculatorForm";
         }
     }
 }
