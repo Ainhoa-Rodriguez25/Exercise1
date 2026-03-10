@@ -19,19 +19,19 @@ public class FactorialController {
     public String showForm(Model model) {
         model.addAttribute("factorialData", new FactorialData());
 
-        return "factorialForm";
+        return "factorial/factorialForm";
     }
 
     @PostMapping("/factorial")
     public String calculate(@Valid FactorialData factorialData, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "factorialForm";
+            return "factorial/factorialForm";
         }
 
         long factorialResult = service.calculateFactorial(factorialData.getNumber());
 
         model.addAttribute("result", factorialResult);
 
-        return "factorialResult";
+        return "factorial/factorialResult";
     }
 }
