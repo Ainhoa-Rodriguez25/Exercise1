@@ -19,18 +19,18 @@ public class PalindromeController {
     @GetMapping("/palindrome")
     public String showForm(Model model) {
         model.addAttribute("palindromeData", new PalindromeData());
-        return "palindromeForm";
+        return "palindrome/palindromeForm";
     }
 
     @PostMapping("/palindrome")
     public String checkPalindrome(@Valid PalindromeData palindromeData, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "palindromeForm";
+            return "palindrome/palindromeForm";
         }
 
         boolean isPalindrome = service.isPalindrome(palindromeData.getWord());
         model.addAttribute("result", isPalindrome);
 
-        return "palindromeResult";
+        return "palindrome/palindromeResult";
     }
 }
