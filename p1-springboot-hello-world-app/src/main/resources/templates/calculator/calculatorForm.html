@@ -5,7 +5,7 @@
 
         <h2>Calculator</h2>
 
-        <form th:action="@{/templates/calculator}" th:object="${calculatorData}" method="post">
+        <form th:action="@{/calculator}" th:object="${calculatorData}" method="post">
             <div>
                 <input type="number" th:field="*{num1}" placeholder="Enter number 1" />
                 <span th:if="${#fields.hasErrors('num1')}" th:errors="*{num1}"></span>
