@@ -25,7 +25,7 @@ public class FactorialControllerTests {
     void loadFactorialForm() throws Exception {
         mockMvc.perform(get("/factorial"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("factorialForm"));
+                .andExpect(view().name("factorial/factorialForm"));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class FactorialControllerTests {
         mockMvc.perform(post("/factorial")
                         .param("number", "5"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("factorialResult"))
+                .andExpect(view().name("factorial/factorialResult"))
                 .andExpect(model().attributeExists("result"));
     }
 
@@ -46,6 +46,6 @@ public class FactorialControllerTests {
         mockMvc.perform(post("/factorial")
                         .param("number", "-1"))   // inválido por @Min(0)
                 .andExpect(status().isOk())
-                .andExpect(view().name("factorialForm"));
+                .andExpect(view().name("factorial/factorialForm"));
     }
 }
