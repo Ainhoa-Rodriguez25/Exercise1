@@ -27,7 +27,7 @@ public class EvenNumberControllerTest {
     void loadEvenNumberForm() throws Exception {
         mockMvc.perform(get("/even"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("evenForm"));
+                .andExpect(view().name("evennumber/evenForm"));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class EvenNumberControllerTest {
         mockMvc.perform(post("/even")
                 .param("number", "4"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("evenResult"))
+                .andExpect(view().name("evennumber/evenResult"))
                 .andExpect(model().attributeExists("result"));
     }
 }
