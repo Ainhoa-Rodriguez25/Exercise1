@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:replace="fragments :: menu"></div>
+
+    <h2>Factorial result</h2>
+
+    <p th:text="${'Factorial of ' + factorialData.number + ' is ' + result}"></p>
+
+    <a th:href="@{/factorial}">Try again</a>
+</body>
+</html>
