@@ -8,7 +8,7 @@
 
         <h2>Factorial calculator</h2>
 
-        <form th:action="@{/templates/factorial}" th:object="${factorialData}" method="post">
+        <form th:action="@{/factorial}" th:object="${factorialData}" method="post">
             <div>
                 <input type="number" th:field="*{number}" placeholder="Enter a number (0 - 20)" required/>
                 <span th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></span>
