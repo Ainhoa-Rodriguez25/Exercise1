@@ -1,7 +1,8 @@
 package demoapp.controller;
 
 
-import demoapp.service.EvenNumberService;
+import demoapp.controller.evennumber.EvenNumberController;
+import demoapp.service.evennumber.EvenNumberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

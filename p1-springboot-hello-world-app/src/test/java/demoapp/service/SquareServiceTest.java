@@ -1,5 +1,6 @@
 package demoapp.service;
 
+import demoapp.service.square.SquareService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

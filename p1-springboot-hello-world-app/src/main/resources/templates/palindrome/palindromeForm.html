@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:replace="fragments :: menu"></div>
+
+        <h2>Palindrome Checker</h2>
+
+        <form th:action="@{/templates/palindrome}" th:object="${palindromeData}" method="post">
+            <input type="text" th:field="*{word}" placeholder="Enter a word" />
+            <span th:if="${#fields.hasErrors('word')}" th:errors="*{word}"></span>
+            <button type="submit">Check</button>
+        </form>
+    </body>
+</html>

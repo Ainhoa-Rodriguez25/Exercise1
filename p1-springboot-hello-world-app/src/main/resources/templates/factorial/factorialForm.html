@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Factorial Calculator</title>
+    </head>
+    <body>
+        <div th:replace="fragments :: menu"></div>
+
+        <h2>Factorial calculator</h2>
+
+        <form th:action="@{/templates/factorial}" th:object="${factorialData}" method="post">
+            <div>
+                <input type="number" th:field="*{number}" placeholder="Enter a number (0 - 20)" required/>
+                <span th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></span>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+    </body>
+</html>

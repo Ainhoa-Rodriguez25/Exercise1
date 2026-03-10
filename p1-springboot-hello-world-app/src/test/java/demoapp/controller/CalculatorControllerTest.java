@@ -1,7 +1,7 @@
 package demoapp.controller;
 
-import demoapp.service.CalculatorService;
-import demoapp.service.EvenNumberService;
+import demoapp.controller.calculator.CalculatorController;
+import demoapp.service.calculator.CalculatorService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

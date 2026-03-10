@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:replace="fragments :: menu"></div>
+
+    <h2>Calculator result</h2>
+
+    <p th:text="${'The result of: '
+                  + calculatorData.num1
+                  + ' ' + calculatorData.operation
+                  + ' ' + calculatorData.num2
+                  + ' = ' + result}"></p>
+
+    <a th:href="@{/templates/calculator}">Try again</a>
+</body>
+</html>
